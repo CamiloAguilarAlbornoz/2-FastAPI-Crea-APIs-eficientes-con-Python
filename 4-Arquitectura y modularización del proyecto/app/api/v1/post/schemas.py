@@ -5,15 +5,15 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
 class Author(BaseModel):
     
-    name: str = Field(..., min_length=5, max_length=30, description='Nombre del autor', 
+    name_author: str = Field(..., min_length=5, max_length=30, description='Nombre del autor', 
                     validation_alias='name_author',)
-    email: EmailStr  = Field(..., min_length=10, max_length=30, description='Email del autor',
+    email_author: EmailStr  = Field(..., min_length=10, max_length=30, description='Email del autor',
                     validation_alias='email_author',)
     model_config = ConfigDict(from_attributes = True)
 
 class Tag(BaseModel):
     
-    name: str = Field(..., min_length=2, max_length=30, description='Nombre de la etiqueta', validation_alias='name_tag',)
+    name_tag: str = Field(..., min_length=2, max_length=30, description='Nombre de la etiqueta', validation_alias='name_tag',)
     model_config = ConfigDict(from_attributes = True) # Para que acepte objetos ORM
 
 class PostBase(BaseModel):

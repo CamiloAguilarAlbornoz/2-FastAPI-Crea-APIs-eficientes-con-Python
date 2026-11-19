@@ -79,7 +79,7 @@ def get_by_id(post_id: int = Path(
         ge = 1, # Indica que post_id deberá ser mayor o igual a 1
         title = 'ID del Post',
         description = 'Identificador entero del post, debe ser mayor a 1',
-        example = 1),
+        examples = 1),
     includes_content: bool = Query(default = True, description = 'Indica si incluye o no el contenido'),
     db: Session = Depends(get_db)):
     repository = PostRepository(db)
